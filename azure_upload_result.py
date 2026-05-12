@@ -53,7 +53,7 @@ blob_name = f"{app_name}/{timestamp}.json"
 # ============================================================================
 try:
     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-    container_client = blob_service_client.get_container_client(CONTAINER_NAME)
+    container_client = blob_service_client.get_container_client(container_name)
 except Exception as e:
     print(f"❌ Erro ao conectar ao Azure Storage: {e}")
     sys.exit(1)
@@ -61,7 +61,7 @@ except Exception as e:
 print(f"\n📤 Enviando arquivo...")
 print(f"   Arquivo local : {local_file}")
 print(f"   Blob remoto   : {blob_name}")
-print(f"   Container     : {CONTAINER_NAME}")
+print(f"   Container     : {container_name}")
 
 try:
     with open(local_file, "rb") as data:
@@ -70,7 +70,7 @@ try:
     print(f"\n✅ Upload concluído!")
     print(f"   App      : {app_name}")
     print(f"   Timestamp: {timestamp}")
-    print(f"   Path     : {CONTAINER_NAME}/{blob_name}")
+    print(f"   Path     : {container_name}/{blob_name}")
 
 except Exception as e:
     print(f"❌ Erro ao enviar arquivo: {e}")
