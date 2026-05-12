@@ -46,7 +46,7 @@ print(f"✅ Arquivo '{local_file}' validado ({file_size} bytes)")
 # GERA NOME DO BLOB COM DATA+HORA
 # ============================================================================
 timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-blob_name = f"{APP_NAME}/{timestamp}.json"
+blob_name = f"{app_name}/{timestamp}.json"
 
 # ============================================================================
 # UPLOAD
