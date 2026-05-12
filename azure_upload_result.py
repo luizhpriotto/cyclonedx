@@ -68,7 +68,7 @@ try:
         container_client.upload_blob(name=blob_name, data=data, overwrite=True)
 
     print(f"\n✅ Upload concluído!")
-    print(f"   App      : {APP_NAME}")
+    print(f"   App      : {app_name}")
     print(f"   Timestamp: {timestamp}")
     print(f"   Path     : {CONTAINER_NAME}/{blob_name}")
 
